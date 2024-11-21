@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductsPage extends BasePage{
 
@@ -19,7 +20,7 @@ public class ProductsPage extends BasePage{
     }
 
     public void clickAddButton(String product){
-        By addToCart = By.xpath(String.format(ADD_TO_CART_PATTERN, product));
+        By addToCart = By.xpath(String.format("//div[text() = '%s']/ancestor::div[@class = 'inventory_item']//button", product));
         driver.findElement(addToCart).click();
     }
 
