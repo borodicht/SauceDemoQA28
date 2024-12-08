@@ -1,8 +1,8 @@
 package pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductsPage extends BasePage{
 
@@ -19,6 +19,7 @@ public class ProductsPage extends BasePage{
         return driver.findElement(TITLE).getText();
     }
 
+    @Step("Добавление товара с именем {product} в корзину")
     public void clickAddButton(String product){
         By addToCart = By.xpath(String.format("//div[text() = '%s']/ancestor::div[@class = 'inventory_item']//button", product));
         driver.findElement(addToCart).click();

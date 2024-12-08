@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -8,6 +9,12 @@ import java.util.concurrent.TimeUnit;
 
 
 public class TestListener implements ITestListener {
+
+    private static WebDriver driver;
+
+    public static void setDriver(WebDriver driver) {
+        TestListener.driver = driver;
+    }
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -49,4 +56,6 @@ public class TestListener implements ITestListener {
     private long getExecutionTime(ITestResult iTestResult) {
         return TimeUnit.MILLISECONDS.toSeconds(iTestResult.getEndMillis() - iTestResult.getStartMillis());
     }
+
+
 }

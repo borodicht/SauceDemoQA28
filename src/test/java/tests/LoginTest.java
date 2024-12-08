@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.*;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -9,6 +10,16 @@ public class LoginTest extends BaseTest {
 
     @Test(testName = "Проверка позитивного логина", description = "Проверка позитивного логина",
             retryAnalyzer = Retry.class)
+    @Epic("Модуль логина интернет-магазина")
+    @Feature("TMS-25")
+    @Story("TMS-25.11")
+    @Severity(SeverityLevel.CRITICAL)
+    @Link("https://www.saucedemo.com/")
+    @Owner("Borodich Timofei")
+    @Issue("BUG-10")
+    @TmsLink("TC-10")
+    @Description("Проверка входа в систему интернет магазина юзера с позитивными кредами")
+    @Flaky
     public void checkLogin() {
         loginPage.open();
         loginPage.login("standard_user", "secret_sauce");
