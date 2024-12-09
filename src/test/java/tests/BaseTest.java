@@ -31,12 +31,12 @@ public class BaseTest {
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("headless");
+            options.addArguments("--headless");
             options.addArguments("start-maximized");
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("safari")) {
             FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("headless");
+            options.addArguments("--headless");
             driver = new FirefoxDriver(options);
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
