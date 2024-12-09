@@ -25,6 +25,9 @@ public class BaseTest {
     ProductsPage productsPage;
     CartPage cartPage;
 
+    String user = System.getProperty("user");
+    String password = System.getProperty("password");
+
     @Parameters({"browser"})
     @BeforeMethod(description = "")
     @Description("Открытие браузера")
@@ -39,6 +42,10 @@ public class BaseTest {
             options.addArguments("--headless");
             driver = new FirefoxDriver(options);
         }
+
+        System.out.println(System.getProperty("user"));
+        System.out.println(System.getProperty("password"));
+
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        context.setAttribute("driver", driver);
 //        TestListener.setDriver(driver);
