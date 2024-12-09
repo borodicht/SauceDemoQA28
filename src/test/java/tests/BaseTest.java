@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -30,10 +31,13 @@ public class BaseTest {
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
+            options.addArguments("headless");
             options.addArguments("start-maximized");
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("safari")) {
-            driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("headless");
+            driver = new FirefoxDriver(options);
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        context.setAttribute("driver", driver);
@@ -49,6 +53,8 @@ public class BaseTest {
         if (ITestResult.FAILURE == result.getStatus()) {
             takeScreenshot(driver);
         }
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 }
