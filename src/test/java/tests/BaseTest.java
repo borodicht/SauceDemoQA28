@@ -12,6 +12,7 @@ import org.testng.annotations.*;
 import pages.CartPage;
 import pages.LoginPage;
 import pages.ProductsPage;
+import utils.PropertyReader;
 
 import java.time.Duration;
 
@@ -25,8 +26,8 @@ public class BaseTest {
     ProductsPage productsPage;
     CartPage cartPage;
 
-    String user = System.getProperty("user");
-    String password = System.getProperty("password");
+    String user = System.getProperty("user", PropertyReader.getProperty("user"));
+    String password = System.getProperty("password", PropertyReader.getProperty("password"));
 
     @Parameters({"browser"})
     @BeforeMethod(description = "")
@@ -42,9 +43,6 @@ public class BaseTest {
             options.addArguments("--headless");
             driver = new FirefoxDriver(options);
         }
-
-        System.out.println(System.getProperty("user"));
-        System.out.println(System.getProperty("password"));
 
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 //        context.setAttribute("driver", driver);
