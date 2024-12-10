@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Check public IP
+      run: curl https://api.ipify.org
     - name: checkout Gir
       uses: actions/checkout@v4
     - name: Set up JDK 11
