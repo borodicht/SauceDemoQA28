@@ -40,7 +40,7 @@ public class BaseTest {
             options.addArguments("--disable-gpu");
             options.addArguments("--disable-extensions");
             options.addArguments("--remote-allow-origins=*");
-            if (System.getProperty("headless").equals("true")) {
+            if (System.getProperty("headless", "true").equals("true")) {
                 options.addArguments("--headless");
 
             }
