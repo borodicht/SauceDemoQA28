@@ -13,7 +13,7 @@ pipeline {
                 git 'https://github.com/borodicht/SauceDemoQA28.git'
 
                 // Run Maven on a Unix agent.
-                sh "mvn clean test
+                sh "mvn clean test"
             }
 
             post {
