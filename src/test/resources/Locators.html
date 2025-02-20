@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h1>
+        <span>   Title 1   </span>
+        <div value="123">
+            <span value="123">Test Title</span>
+        </div>
+    </h1>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+</div>
+<div>
+    <h1>
+        <span>   Title 2   </span>
+        <div value="124">
+            <span value="124">Test Title</span>
+        </div>
+    </h1>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+</div>
+<div>
+    <h1>
+        <span>   Title 3   </span>
+        <div value="234">
+            <span value="234">Test Title</span>
+        </div>
+    </h1>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+    <div>
+        <span class="arrow">5</span>
+    </div>
+</div>
+</body>
+</html>
+
+
+XPath:
+1: Отобрать элемент с текстом 'Title 2'
+2: Отобрать элемент h1 который содержит элемент с текстом 'Title 3'
+3: Отобрать второй элемент класса 'arrow' из блока в котором присутствует текст 'Title 2'
+
+CSS:
+1: Отобрать все элементы с классом arrow
+2: Отобрать все элементы <span> у которых родителем является <h1>
+3: Отобрать все элементы <span> у которых параметр value начинается с '12';
