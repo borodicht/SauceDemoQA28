@@ -18,7 +18,7 @@ public class LoginTest extends BaseTest {
     @Owner("Borodich Timofei")
     @Issue("BUG-10")
     @TmsLink("TC-10")
-    @Description("Проверка входа в систему интернет магазина юзера с позитивными кредами")
+    @Description("Проверка входа в систему интернет магазина юзера с позитивными данными")
     @Flaky
     public void checkLogin() {
         loginPage.open();
