@@ -41,7 +41,7 @@ public class BaseTest {
 //            options.addArguments("--disable-extensions");
 //            options.addArguments("--remote-allow-origins=*");
 //            if (System.getProperty("headless", "true").equals("true")) {
-//                options.addArguments("--headless");
+                options.addArguments("--headless");
 //            }
             options.addArguments("--start-maximized");
             driver = new ChromeDriver(options);
